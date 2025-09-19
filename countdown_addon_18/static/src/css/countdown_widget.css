@@ -1,0 +1,397 @@
+/* Base countdown widget styles */
+.countdown-widget {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-width: 300px;
+    direction: ltr;
+    transition: all 0.3s ease;
+}
+
+/* Auto-switch to RTL when the document is RTL (e.g., Arabic) */
+[dir="rtl"] .countdown-widget {
+    direction: rtl;
+}
+
+/* Size variations */
+.countdown-widget-small {
+    min-width: 180px;
+    padding: 6px 8px;
+    gap: 4px;
+}
+
+.countdown-widget-small .countdown-number {
+    font-size: 14px;
+}
+
+.countdown-widget-small .countdown-label {
+    font-size: 9px;
+}
+
+.countdown-widget-small .countdown-separator {
+    font-size: 13px;
+}
+
+.countdown-widget-medium {
+    min-width: 300px;
+    padding: 8px 12px;
+    gap: 8px;
+}
+
+.countdown-widget-medium .countdown-number {
+    font-size: 24px;
+}
+
+.countdown-widget-medium .countdown-label {
+    font-size: 12px;
+}
+
+.countdown-widget-medium .countdown-separator {
+    font-size: 20px;
+}
+
+/* Alignment variations - Fixed for form view */
+.countdown-widget-left {
+    justify-content: flex-start;
+    margin-right: auto;
+    margin-left: 0;
+}
+
+.countdown-widget-center {
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.countdown-widget-right {
+    justify-content: flex-end;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+/* Form view specific alignment fixes */
+.o_form_view .o_field_widget .countdown-widget-left {
+    justify-content: flex-start;
+    margin-right: auto;
+    margin-left: 0;
+    width: fit-content;
+}
+
+.o_form_view .o_field_widget .countdown-widget-center {
+    justify-content: center;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.o_form_view .o_field_widget .countdown-widget-right {
+    justify-content: flex-end;
+    margin-left: auto;
+    margin-right: 0;
+    width: fit-content;
+}
+
+/* List view specific alignment fixes */
+.o_list_view .o_field_widget .countdown-widget-left {
+    justify-content: flex-start;
+    margin-right: auto;
+    margin-left: 0;
+}
+
+.o_list_view .o_field_widget .countdown-widget-center {
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.o_list_view .o_field_widget .countdown-widget-right {
+    justify-content: flex-end;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+/* Sheet specific alignment fixes - CRITICAL FOR SHEET */
+.o_form_sheet .o_field_widget .countdown-widget-left {
+    justify-content: flex-start;
+    margin-right: auto;
+    margin-left: 0;
+    width: fit-content;
+    display: flex;
+}
+
+.o_form_sheet .o_field_widget .countdown-widget-center {
+    justify-content: center;
+    margin: 0 auto;
+    width: fit-content;
+    display: flex;
+}
+
+.o_form_sheet .o_field_widget .countdown-widget-right {
+    justify-content: flex-end;
+    margin-left: auto;
+    margin-right: 0;
+    width: fit-content;
+    display: flex;
+}
+
+/* Additional alignment fixes for different contexts */
+.o_form_sheet .o_field_widget .countdown-widget-left {
+    justify-content: flex-start;
+    margin-right: auto;
+    margin-left: 0;
+    width: fit-content;
+}
+
+.o_form_sheet .o_field_widget .countdown-widget-center {
+    justify-content: center;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.o_form_sheet .o_field_widget .countdown-widget-right {
+    justify-content: flex-end;
+    margin-left: auto;
+    margin-right: 0;
+    width: fit-content;
+}
+
+/* Group field alignment fixes */
+.o_group .o_field_widget .countdown-widget-left {
+    justify-content: flex-start;
+    margin-right: auto;
+    margin-left: 0;
+    width: fit-content;
+}
+
+.o_group .o_field_widget .countdown-widget-center {
+    justify-content: center;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.o_group .o_field_widget .countdown-widget-right {
+    justify-content: flex-end;
+    margin-left: auto;
+    margin-right: 0;
+    width: fit-content;
+}
+
+/* Sheet field container fixes */
+.o_form_sheet .o_field_widget {
+    display: flex;
+    flex-direction: column;
+}
+
+.o_form_sheet .o_field_widget .countdown-widget {
+    align-self: flex-start;
+}
+
+.o_form_sheet .o_field_widget .countdown-widget-left {
+    align-self: flex-start;
+}
+
+.o_form_sheet .o_field_widget .countdown-widget-center {
+    align-self: center;
+}
+
+.o_form_sheet .o_field_widget .countdown-widget-right {
+    align-self: flex-end;
+}
+
+/* Compact mode */
+.countdown-widget-compact {
+    min-width: auto;
+    width: fit-content;
+    padding: 4px 8px;
+    gap: 4px;
+}
+
+.countdown-widget-compact .countdown-item {
+    min-width: 30px;
+}
+
+.countdown-widget-compact .countdown-number {
+    font-size: 14px;
+}
+
+.countdown-widget-compact .countdown-label {
+    font-size: 8px;
+    margin-top: 1px;
+}
+
+.countdown-widget-compact .countdown-separator {
+    font-size: 12px;
+    margin: 0 2px;
+}
+
+/* State variations */
+.countdown-widget.expired {
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+    animation: pulse 2s infinite;
+}
+
+.countdown-widget.warning {
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+    animation: warning-pulse 1.5s infinite;
+}
+
+/* Expired state - Fixed centering */
+.countdown-widget.expired {
+    justify-content: center !important;
+    text-align: center;
+}
+
+.countdown-expired {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
+
+.countdown-expired i {
+    font-size: 20px;
+}
+
+.countdown-expired .countdown-label {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Override alignment for expired state */
+.countdown-widget.expired.countdown-widget-left,
+.countdown-widget.expired.countdown-widget-right,
+.countdown-widget.expired.countdown-widget-center {
+    justify-content: center !important;
+    text-align: center;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 50px;
+}
+
+.countdown-number {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.countdown-label {
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 2px;
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.countdown-separator {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 4px;
+    animation: blink 1s infinite;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes warning-pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    50% {
+        transform: scale(1.02);
+        box-shadow: 0 6px 20px rgba(243, 156, 18, 0.3);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0.3;
+    }
+}
+
+/* Hover effects */
+.countdown-widget:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .countdown-widget {
+        min-width: 250px;
+        gap: 4px;
+        padding: 6px 8px;
+    }
+    
+    .countdown-widget-small {
+        min-width: 160px;
+    }
+    
+    .countdown-number {
+        font-size: 18px;
+    }
+    
+    .countdown-label {
+        font-size: 10px;
+    }
+    
+    .countdown-separator {
+        font-size: 16px;
+    }
+    
+    .countdown-expired {
+        font-size: 14px;
+    }
+    
+    .countdown-expired i {
+        font-size: 18px;
+    }
+}
+
+/* Dark theme support */
+.o_dark .countdown-widget {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.o_dark .countdown-widget.expired {
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+}
+
+.o_dark .countdown-widget.warning {
+    background: linear-gradient(135deg, #d68910 0%, #f39c12 100%);
+}
